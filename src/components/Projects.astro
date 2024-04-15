@@ -1,43 +1,82 @@
 ---
 import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
+import Python from "./icons/Python.astro"
+import HTML from "./icons/HTML.astro"
 import Link from "./icons/Link.astro"
+import Flask from "./icons/Flask.astro"
+import Django from "./icons/Django.astro"
+import SQL from "./icons/SQL.astro"
+import CSS from "./icons/CSS.astro"
+import Tailwind from "./icons/Tailwind.astro"
 import LinkButton from "./LinkButton.astro"
 
+
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#003159] text-white",
+    icon: Python,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
+  DJANGO: {
+    name: "Django",
+    class: "bg-[#003159] text-white",
+    icon: Django,
+  },
+  Html: {
+    name: "HTML",
+    class: "bg-[#003159] text-white",
+    icon: HTML,
+  },
+  FLASK: {
+    name: "Flask",
+    class: "bg-[#003159] text-white",
+    icon: Flask,
+  },
+  SQL: {
+    name: "SQL",
+    class: "bg-[#003159] text-white",
+    icon: SQL,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#003159] text-white",
+    icon: CSS,
+  },
+  Tailwind: {
+    name: "Tailwind",
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
 }
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Web - Cafe Donjota",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Pagina web desarrollada para cliente del rubro gastronomico, con el objetivo de expandir su llegada a diferentes publicos. Todo esto desarrollado bajo el entorno de Python / Django .",
+    link: "https://donjotacafe.up.railway.app/",
+    github: "https://github.com/Fedemramos/donjotaweb",
+    image: "/projects/donjota.jpg",
+    tags: [TAGS.PYTHON, TAGS.DJANGO, TAGS.Html, TAGS.CSS, TAGS.SQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "App Consultorio medico",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Plataforma para centro medico, en le cual se tiene toda la base de datos de los pacientes y todo un sistema de gestion de turnos y fechas, para cada doctor. Todo esto desarrollado bajo el entorno de Python / Flask y su pluggin para base de datos  .",
+    github: "https://github.com/Fedemramos/Consultorio-medico",
+    image: "/projects/consultorio.jpg",
+    tags: [TAGS.PYTHON, TAGS.FLASK,TAGS.Html,TAGS.CSS, TAGS.SQL],
+  },
+  {
+    title: "App Base de datos gimnasio",
+    description:
+      "Esta aplicacion, permite al dueño, crear la rutina de cada cliente y que este lo pueda ver siempre que quiera desde el celular y ademas permite tener un control con los venciemientos de los pagos, todo esto pudiendo avisar al cliente. Todo esto desarrollado bajo el entorno de Python / Django   .",
+    github: "https://github.com/Fedemramos/Consultorio-medico",
+    image: "/projects/gym.jpg",
+    tags: [TAGS.PYTHON, TAGS.DJANGO,TAGS.Html, TAGS.SQL, TAGS.Tailwind],
   },
 ]
 ---
-
+<br>
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
@@ -53,19 +92,18 @@ const PROJECTS = [
       {title}
     </h3>
     <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-
+      <ul class="flex flex-row flex-wrap mb-2 gap-x-2">
+        {tags.map((tag) => (
+          <li class="mb-2"> {/* Agrega un margen inferior para separar los elementos */}
+            <span
+              class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
       <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
       <footer class="flex items-end justify-start mt-4 gap-x-4">
           {github && (

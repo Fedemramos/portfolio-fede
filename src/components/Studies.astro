@@ -1,0 +1,47 @@
+---
+import StudiesItem from "./StudiesItem.astro"
+const EXPERIENCIE = [
+  {
+    institution: "CS50 Harvard",
+    title: "Computer Science",
+    year: "2023 - 2024",
+    description: "Los temas incluyen pensamiento computacional, abstracción, algoritmos, estructuras de datos y ciencias de la computación en general."
+  },
+  {
+    institution: "Udemy",
+    title: "Universidad Python",
+    year: "2021 - 2023",
+    description:
+      "En esta etapa, se profundizo en las bases de la programación y exploro el ecosistema de Python. Incluidos los marcos, paradigmas, base de datos, el desarrollo web y el machine learning.",
+  },
+  {
+    institution: "CoderHouse",
+    title: "Python",
+    year: "2022 ",
+    description:
+      "Curso enfocado en la introduccion de las base del lenguaje  Python y su utilizacion en el desarrollo web con Django.",
+  },
+  {
+    institution: " Universidad Nacional Mar del Plata",
+    title: "Diseño Industrial",
+    year: "2012 - 2020",
+    description:
+      "Licenciado en la carrera de Diseño Industrial de orientacion productos y servicios.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <StudiesItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
+
+
+
+
+
